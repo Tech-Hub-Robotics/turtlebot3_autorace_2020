@@ -65,6 +65,10 @@ class DetectLane():
         self.reliability_white_line = 100
         self.reliability_blue_line = 100
 
+        self.mov_avg_left = np.empty((0, 3))  # Initialize empty array for left lane moving average
+        self.mov_avg_right = np.empty((0, 3))  # Initialize empty array for right lane moving average
+
+
     def cbGetDetectLaneParam(self, config, level):
         rospy.loginfo("[Detect Lane] Calibration Parameters reconfigured")
         rospy.loginfo("hue_white_l : %d", config.hue_white_l)
